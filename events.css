@@ -1,0 +1,23 @@
+.event-col{
+    display: flex;
+    position: absolute;
+    background: transparent;
+    margin-top: 11vh;
+    width: 100%;
+    justify-content: center;
+}
+.table-eve{
+    color: rgb(0, 0, 0);
+    border-collapse: separate;
+    border-spacing: 1vw;
+}
+.table-eve td, .table-eve th{
+    width: 30vw;
+    text-align: center;
+}
+.table-eve tr{
+    content: "";
+    display: block;
+    margin-top: 5px;
+    background-color: rgba(248, 245, 255, 0.91);
+}
