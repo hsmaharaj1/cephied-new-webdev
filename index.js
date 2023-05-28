@@ -132,6 +132,9 @@ function init() {
         let dz = 0 + (radius * Math.cos(phi));
         return new THREE.Vector3(dx, dy, dz);
     }
+
+    document.querySelector('.footer li:nth-child(2) a').addEventListener('click', zoomSphere);
+    document.querySelector('.footer li:nth-child(3) a').addEventListener('click', zoomSphere);
 }
 
 
@@ -182,38 +185,32 @@ function animate() {
     stars.geometry.verticesNeedUpdate = true;
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
+
+    TWEEN.update()
 }
 
-function zoom(){
-    
+
+// Function to perform the zoom animation
+function zoomSphere(event) {
+    event.stopPropagation();
+    const targetZoom = 10; // Set the desired zoom level here
+    const zoomDuration = 2000; // Set the duration of the zoom animation in milliseconds
+  
+    const startZoom = camera.position.z;
+    const zoomDifference = targetZoom - startZoom;
+    const startTime = Date.now();
+  
+    function animateZoom() {
+      const elapsed = Date.now() - startTime;
+      const progress = elapsed / zoomDuration;
+      const currentZoom = startZoom + zoomDifference * progress;
+  
+      camera.position.z = currentZoom;
+  
+      if (progress < 1) {
+        requestAnimationFrame(animateZoom);
+      }
+    }
+  
+    animateZoom();
 }
-
-// /*     Resize     */
-// window.addEventListener("resize", () => {
-//     clearTimeout(timeout_Debounce);
-//     timeout_Debounce = setTimeout(onWindowResize, 80);
-// });
-// function onWindowResize() {
-//     camera.aspect = container.clientWidth / container.clientHeight;
-//     camera.updateProjectionMatrix();
-//     renderer.setSize(container.clientWidth, container.clientHeight);
-// }
-
-
-
-/*     Fullscreen btn     */
-// let fullscreen;
-// let fsEnter = document.getElementById('fullscr');
-// fsEnter.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     if (!fullscreen) {
-//         fullscreen = true;
-//         document.documentElement.requestFullscreen();
-//         fsEnter.innerHTML = "Exit Fullscreen";
-//     }
-//     else {
-//         fullscreen = false;
-//         document.exitFullscreen();
-//         fsEnter.innerHTML = "Go Fullscreen";
-//     }
-// });
