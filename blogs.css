@@ -9,13 +9,14 @@ body{
     height: 10vh;
     background: transparent;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     color: aliceblue;
     font-family: "Ubuntu", sans-serif;
     letter-spacing: .6vw;
-    font-size: 1.7vw;
+    font-size: 3vh;
 }
 .footer{
     position: fixed;
@@ -28,9 +29,9 @@ body{
     border: 1px solid black;
     padding: 1.5vw;
     border-radius: 2vw;
-    max-width: 20vw;
+    max-width: 66vw;
     margin-top: 15vh;
-    margin: 0 auto;
+    margin: auto;
 }
 .name{
 font-size: 1.6rem;
@@ -57,15 +58,15 @@ color: #e0efff;
 }
 .grid-cont{
     display: grid;
-    margin-right: 0;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 8rem;
-    grid-row-gap: 15rem;
-    grid-auto-rows: 12rem;
+    column-gap: 6rem;
+    row-gap: 6rem;
+    /* grid-auto-rows: 12rem; */
     justify-content: center;
     padding: 2rem;
     overflow: auto;
     background: transparent;
+    width: 100%;
 }
 .grid-cont::-webkit-scrollbar{
     width: .5rem;
@@ -81,11 +82,12 @@ color: #e0efff;
 }
 .cont{
     display: flex;
+    justify-content: center;
     padding-top: 11vh;
     padding-left: 8vw;
     padding-right: 8vw;
     padding-bottom: 11vh;
-    height: 100vh;
+    height: 100%;
     background: transparent;
 }
 img{
@@ -98,3 +100,22 @@ img{
     grid-column: 1 / span 2;
     height: 10vw;
 }
+
+@media only screen and (max-width: 415px) {
+    .grid-cont {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .grid-item {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media only screen and (min-width: 415px) and (max-width: 850px) {
+    .grid-cont {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
