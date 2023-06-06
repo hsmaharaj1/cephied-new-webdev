@@ -24,7 +24,7 @@
             <label for="toggle"></label>
         </div>
       </div>
-      <h2>EVENTS</h2>
+      <h2>ABOUT US</h2>
     </div>
     <div class="navbar">
       <ul id="nav-menu">
@@ -34,22 +34,7 @@
         <li class="nav-it"><a href="about.html">ABOUT</a></li>
       </ul>
     </div>
-    <div class="event-col">
-      <div class="event-table">
-        <table class="table-eve">
-          <tr>
-            <th>DATE</th>
-            <th>EVENTS</th>
-            <th>DESCRIPTION</th>
-          </tr>
-          <tr>
-            <td>DD-MM-YYYY</td>
-            <td>Anything</td>
-            <td>Description about the event</td>
-          </tr>
-        </table>
-      </div>
-    </div>
+
     <div class="footer">
         <ul>
           <li><a href="index.html">HOME</a></li>
@@ -63,22 +48,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js'></script>
     <script src="index.js" type="module"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        var key=1;
-        const eventsCol = document.querySelector('.event-col');
-
-        toggle.addEventListener('change', ()=>{
-            if(key == 1){
-            eventsCol.classList.add('close');
-            key=0;
-            }
-            else{
-                eventsCol.classList.remove('close');
-                key=1;
-            }
-            
-        })
-      })
+      
     </script>
 </body>
 </html>

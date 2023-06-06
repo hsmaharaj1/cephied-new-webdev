@@ -5,15 +5,25 @@
     margin-top: 11vh;
     width: 100%;
     justify-content: center;
+    overflow: auto;
+}
+
+.event-col.close{
+    display: none;
 }
 .table-eve{
     color: rgb(0, 0, 0);
     border-collapse: separate;
     border-spacing: 1vw;
+    overflow: auto;
 }
-.table-eve td, .table-eve th{
+.table-eve th{
     width: 30vw;
     text-align: center;
+}
+.table-eve td{
+    width: 30vw;
+    text-align: justify;
 }
 .table-eve tr{
     content: "";
@@ -21,3 +31,8 @@
     margin-top: 5px;
     background-color: rgba(248, 245, 255, 0.91);
 }
+@media only screen and (max-width: 415px) {
+    .footer{
+      display: none;
+    }
+  }

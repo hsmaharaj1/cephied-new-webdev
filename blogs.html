@@ -18,8 +18,23 @@
 
 <body> 
     <div class="header">
+      <div class="menu">
+        <div>
+            <input type="checkbox" id="toggle">
+            <label for="toggle"></label>
+        </div>
+      </div>
         <h2>BLOGS</h2>
     </div>
+    <div class="navbar">
+      <ul id="nav-menu">
+        <li class="nav-it"><a href="index.html">HOME</a></li>
+        <li class="nav-it"><a href="blogs.html">BLOGS</a></li>
+        <li class="nav-it"><a href="events.html">EVENTS</a></li>
+        <li class="nav-it"><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+
     <div class="cont">
       <div class="grid-cont">
         <div class="grid-item">
@@ -140,12 +155,31 @@
           <li><a href="index.html">HOME</a></li>
           <li><a href="blogs.html">BLOGS</a></li>
           <li><a href="events.html">EVENTS</a></li>
-          <li><a href="">ABOUT</a></li>
+          <li><a href="about.html">ABOUT</a></li>
         </ul>
       </div>
     <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/examples/js/controls/OrbitControls.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js'></script>
     <script src="index.js" type="module"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        var key=1;
+        const cont = document.querySelector('.cont');
+
+        toggle.addEventListener('change', ()=>{
+            if(key == 1){
+            cont.classList.add('close');
+            key=0;
+            }
+            else{
+                cont.classList.remove('close');
+                key=1;
+            }
+            
+        })
+      })
+    </script>
+
 </body>
 </html>
