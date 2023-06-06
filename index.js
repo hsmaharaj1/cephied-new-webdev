@@ -12,10 +12,6 @@ cameraSpeed = 0,
 blobScale = 3;
 
 
-init();
-animate();
-
-
 function init() {
     scene = new THREE.Scene();
 
@@ -214,3 +210,33 @@ function zoomSphere(event) {
   
     animateZoom();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    var key=1;
+    const menuIcon = document.querySelector('toggle');
+    const navBar = document.querySelector('.navbar');
+    const cont = document.querySelector('.cont');
+    const canvas = document.querySelector('canvas_container');
+    const text = document.querySelector('.overtext');
+
+    toggle.addEventListener('change', ()=>{
+        if(key == 1){
+        navBar.classList.toggle('open');
+        navBar.classList.remove('close');
+        text.classList.add('close');
+        // cont.classList.add('close');
+        key=0;
+        }
+        else{
+            navBar.classList.add('close');
+            navBar.classList.remove('open');
+            text.classList.remove('close');
+            // cont.classList.remove('close');
+            key=1;
+        }
+        
+    })
+  })
+
+init();
+animate();

@@ -17,7 +17,7 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 1;
 }
 
@@ -33,12 +33,16 @@ canvas {
 
 .footer{
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   bottom: 0%;
   left: 0%;
   right: 0%;
   height: 5vw;
   background: transparent;
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
   z-index: 1;
 }
 
@@ -60,7 +64,7 @@ ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  margin-left: 14vw;
+  margin-left: 0;
 
 }
 
@@ -78,4 +82,119 @@ li a{
   padding: 1vw 7vw;
   font-family: "Noto Sans", sans-serif;
   font-size: 1.2vw;
+}
+
+@media only screen and (max-width: 415px) {
+  .footer{
+    display: none;
+  }
+}
+@media only screen and (min-width: 415px) {
+  .menu{
+    display: none;
+  }
+}
+
+.menu{
+  cursor: pointer;
+  position: absolute;
+  left: 3%;
+}
+.navbar{
+  display: flex;
+  position: fixed;
+  /* background: transparent; */
+  /* background-color: antiquewhite; */
+  backdrop-filter: blur(1000px);
+  top: 10vh;
+  left: -200%;
+  height: 100%;
+  width: 100%;
+  float: left;
+  transition: left 0.4s ease-in-out;
+  z-index: 2;
+
+}
+.navbar.open{
+  left: 0;
+}
+.navbar.close{
+  left: -200%;
+}
+
+#nav-menu{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 5%;
+  margin-left: 5%;
+  font-weight: bold;
+  color: aliceblue;
+}
+.nav-it{
+  float: left;
+  margin: 4vh auto;
+}
+.nav-it a{
+  display: block;
+  position: fixed;
+  font-size: medium;
+}
+
+/* For Mobile Screen Navbar */
+:root {
+  --animation-curve: cubic-bezier(1, 0, 0, 1);
+}
+
+label{
+  background-color: antiquewhite;
+  width: 2.2em;
+  height: .2em;
+  display:block;
+  position: absolute;
+  cursor: pointer;
+  
+  &::before, &::after{
+      content: '';
+      width: 2.2em;
+      height: .2em;
+      display: block;
+      position: absolute;
+      background-color: antiquewhite;
+      transition: all 0.6s var(--animation-curve);
+  }
+  
+  &::before{
+      top: -250%;
+      left: 0%;
+      transform-origin: left top;
+  /*     transform: rotateZ(0deg); */
+  }
+  &::after{
+      bottom: -250%;
+      left: 0%;
+      transform-origin: left bottom;
+  /*     transform: rotateZ(0deg); */
+  }
+}
+
+#toggle:checked ~ label::before{
+  background-color: antiquewhite;
+  content:'';
+  transform: rotateZ(30deg);
+}
+
+#toggle:checked ~ label::after{
+  content:'';
+  background-color: antiquewhite;
+  transform: rotateZ(-30deg);
+}
+#toggle:checked ~ label{
+  background: transparent;
+}
+#toggle ~ label{
+  transition: all 0.6s var(--animation-curve);
+}
+input{
+  display: none;
 }

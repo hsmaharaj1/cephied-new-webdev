@@ -20,6 +20,9 @@ body{
 }
 .footer{
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     background-color: rgba(0, 0, 0, 200);
 }
@@ -90,6 +93,9 @@ color: #e0efff;
     height: 100%;
     background: transparent;
 }
+.cont.close{
+    display: none;
+}
 img{
     width: 100%;
     border-radius: 2vw;
@@ -117,5 +123,10 @@ img{
   @media only screen and (min-width: 415px) and (max-width: 850px) {
     .grid-cont {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media only screen and (max-width: 415px) {
+    .footer{
+      display: none;
     }
   }
