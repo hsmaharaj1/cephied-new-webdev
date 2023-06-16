@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Himanshu S">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEPHEID</title>
   <link rel="stylesheet" type="text/css" href="events.css">
@@ -14,41 +16,131 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .header {
+      position: sticky;
+    }
+
+    .main-about {
+      /* padding-top: 10vh; */
+      padding-left: 10vw;
+      padding-right: 10vw;
+      padding-bottom: 10vw;
+      overflow: auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-about.close {
+      display: none;
+    }
+
+    .content {
+      padding: 1rem;
+      display: block;
+      background-color: rgba(250, 235, 215, .8);
+      border-radius: 1rem;
+      font-family: "Ubuntu", sans-serif;
+      font-size: medium;
+      overflow: auto;
+      height: 70vh;
+    }
+
+    .content::-webkit-scrollbar {
+      width: 0rem;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background-color: blanchedalmond;
+    }
+
+    .content::-webkit-scrollbar-track {
+      background-color: aliceblue;
+    }
+
+    .content::-webkit-scrollbar-thumb:hover {
+      background-color: rgb(244, 211, 168);
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+
+    .sub-heading {
+      font-weight: 400;
+
+    }
+  </style>
 </head>
 
-<body> 
-    <div class="header">
-      <div class="menu">
-        <div>
-            <input type="checkbox" id="toggle">
-            <label for="toggle"></label>
-        </div>
+<body>
+  <div class="header">
+    <div class="menu">
+      <div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"></label>
       </div>
-      <h2>ABOUT US</h2>
     </div>
-    <div class="navbar">
-      <ul id="nav-menu">
-        <li class="nav-it"><a href="index.html">HOME</a></li>
-        <li class="nav-it"><a href="blogs.html">BLOGS</a></li>
-        <li class="nav-it"><a href="events.html">EVENTS</a></li>
-        <li class="nav-it"><a href="about.html">ABOUT</a></li>
-      </ul>
-    </div>
+    <h2>ABOUT US</h2>
+  </div>
+  <div class="navbar">
+    <ul id="nav-menu">
+      <li class="nav-it"><a href="index.html">HOME</a></li>
+      <li class="nav-it"><a href="blogs.html">BLOGS</a></li>
+      <li class="nav-it"><a href="events.html">EVENTS</a></li>
+      <li class="nav-it"><a href="about.html">ABOUT</a></li>
+    </ul>
+  </div>
+  <div class="main-about">
+    <div class="content">
+      <h1>Hey, We're Cepheid</h1>
+      <div class="sub-heading">The Astronomy & Astrophysics Club of IIT Hyderabad.</div>
+      <h1>Our Goal</h1>
+      <div class="sub-heading">Here at Cepheid we try to bring awareness in the field of Astronomy and Astrophysics.
+      </div>
+      <br>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus saepe optio, maiores consequuntur itaque
+        quidem laudantium enim! Illo deserunt laboriosam earum voluptate, quia nostrum inventore velit! Soluta, ex eum?
+      </p>
+      <br>
+      <h2>MEMEBERS</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis mollitia pariatur nostrum omnis fugit obcaecati
+        illum, quaerat corporis, architecto laborum delectus qui magnam officiis at assumenda aliquid tenetur deserunt
+        dolores.</p>
+      <h2>Contact Us</h2>
+      <h4>Astronomy & Astrophysics Club @ <br>
+        Indian Institute of Technology, Hyderabad<br>
+        Kandi, Telangana</h4>
+      <a href="mailto:cepheid@gymkhana.iith.ac.in">cepheid@gymkhana.iith.ac.in</a>
+      <p>+91-903 244 3379</p>
+      <p>+91-735 689 9305</p>
 
-    <div class="footer">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="blogs.html">BLOGS</a></li>
-          <li><a href="events.html">EVENTS</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-        </ul>
-      </div>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/examples/js/controls/OrbitControls.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js'></script>
-    <script src="index.js" type="module"></script>
-    <script>
-      
-    </script>
+    </div>
+  </div>
+  <div class="footer">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="blogs.html">BLOGS</a></li>
+      <li><a href="events.html">EVENTS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+    </ul>
+  </div>
+  <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/examples/js/controls/OrbitControls.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js'></script>
+  <script src="index.js" type="module"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const about = document.querySelector(".main-about")
+      toggle.addEventListener('change', () => {
+        about.classList.toggle('close')
+      })
+    })
+  </script>
 </body>
+
 </html>
