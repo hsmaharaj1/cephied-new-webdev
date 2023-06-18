@@ -84,12 +84,12 @@ li a{
   font-size: 1.2vw;
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 515px) {
   .footer{
     display: none;
   }
 }
-@media only screen and (min-width: 415px) {
+@media only screen and (min-width: 515px) {
   .menu{
     display: none;
   }
