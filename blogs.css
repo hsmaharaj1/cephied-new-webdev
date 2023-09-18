@@ -118,15 +118,15 @@ img{
       width: 100%;
       margin-bottom: 2rem;
     }
+
+    /*Merged the footer*/
+    .footer{
+        display: none;
+      }
   }
   
   @media only screen and (min-width: 415px) and (max-width: 850px) {
     .grid-cont {
       grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media only screen and (max-width: 415px) {
-    .footer{
-      display: none;
     }
   }
