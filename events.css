@@ -1,38 +1,61 @@
-.event-col{
-    display: flex;
-    position: absolute;
-    background: transparent;
-    margin-top: 11vh;
-    width: 100%;
-    justify-content: center;
-    overflow: auto;
+.event-col {
+  display: flex;
+  position: absolute;
+  background: transparent;
+  margin-top: 11vh;
+  width: 100%;
+  justify-content: center;
+  overflow: auto;
 }
 
-.event-col.close{
-    display: none;
+.event-col.close {
+  display: none;
 }
-.table-eve{
-    color: rgb(0, 0, 0);
-    border-collapse: separate;
-    border-spacing: 1vw;
-    overflow: auto;
+.table-eve {
+  color: rgb(0, 0, 0);
+  border-collapse: separate;
+  border-spacing: 1vw;
+  overflow: auto;
 }
-.table-eve th{
-    width: 30vw;
-    text-align: center;
+.table-eve th {
+  width: 30vw;
+  text-align: center;
 }
-.table-eve td{
-    width: 30vw;
-    text-align: justify;
+.table-eve td {
+  width: 30vw;
+  text-align: justify;
 }
-.table-eve tr{
-    content: "";
-    display: block;
-    margin-top: 5px;
-    background-color: rgba(248, 245, 255, 0.91);
+.table-eve tr {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  background-color: rgba(248, 245, 255, 0.91);
 }
 @media only screen and (max-width: 415px) {
-    .footer{
-      display: none;
-    }
+  .footer {
+    display: none;
   }
+}
+.cepheid-logo {
+  display: inline;
+  height: 10vh;
+  object-fit: contain;
+  transform: translateX(-50%);
+  position: fixed;
+  top: 0;
+  left: 12vw;
+  z-index: 100;
+  /* transform: translate(-160px, 100px); */
+}
+@media (max-width: 514px) {
+  .cepheid-logo {
+    display: inline;
+    height: 10vh;
+    object-fit: contain;
+    transform: translateX(23%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+  }
+}
