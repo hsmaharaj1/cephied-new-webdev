@@ -130,26 +130,32 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 }
-.cepheid-logo {
-  display: inline;
-  height: 10vh;
-  object-fit: contain;
-  transform: translateX(-50%);
-  position: fixed;
-  top: 0;
-  left: 12vw;
-  z-index: 100;
-  /* transform: translate(-160px, 100px); */
-}
-@media (max-width: 514px) {
+@media (min-width: 515px) {
   .cepheid-logo {
+    width: 50px;
+    scale: 1.8;
     display: inline;
     height: 10vh;
     object-fit: contain;
-    transform: translateX(23%);
-    position: fixed;
+    position: absolute;
     top: 0;
-    right: 0;
+    left: 10vw;
+    z-index: 100;
+    /* transform: translate(-160px, 100px); */
+  }
+}
+@media (max-width: 514px) {
+  .cepheid-logo {
+
+    position: absolute;
+    top: 0;
+    left: 75% !important;
+    width: 50px;
+    scale: 1.5;
+    display: inline;
+    height: 10vh;
+    object-fit: contain;
+    transform: translateX(0px);
     z-index: 100;
   }
 }

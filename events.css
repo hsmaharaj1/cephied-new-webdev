@@ -1,18 +1,20 @@
 .event-col {
   display: flex;
-  position: fixed;
+  /* position: fixed; */
   background: transparent;
   margin-top: 10vh;
-  
-  overflow: auto;
-  height: 80vh;
+  position: static;
+  /* overflow: auto; */
+  height: max-content;
   width: 100%;
   justify-content: center;
-  overflow: auto;
+  /* overflow: auto; */
   z-index: 1;
 }
-.footer{
+.footer {
   z-index: 2;
+  position: fixed !important;
+  bottom: 0;
 }
 .event-card {
   /* width: 40vw; */
@@ -29,7 +31,12 @@
   border-radius: 1rem;
   /* height:fit-content; */
   opacity: 80%;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.image-slider {
+  width: 100%;
+  height: max-content;
 }
 .evc {
   text-align: left;
@@ -38,19 +45,19 @@
   margin-left: 2.6rem;
   font-size: 1.5vw;
 }
-.date{
+.date {
   text-align: left;
   display: flex;
   color: rgb(21, 20, 19);
   margin-left: 2.6rem;
   font-size: 1.5vw;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
 .event-table {
   height: fit-content;
   /* display:flex; */
-  overflow: auto;
+  /* overflow: auto; */
   width: 100%;
   margin-left: 18vw;
   margin-right: 16vw;
@@ -75,37 +82,128 @@
 }
 
 body {
-  backdrop-filter: blur(2px);
+  overflow-y: scroll !important;
+  min-height: 100vh;
+  height: max-content;
+  /* overflow: auto; */
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  backdrop-filter: blur(0px);
+  background-image: url("./new_wallpaper.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* height: 100dvh; */
+  position: static !important;
 }
-@media (min-width: 280px) and (max-width: 700) {
-  body {
-    height: 100vh;
+
+h2 {
+  font-size: 50px;
+}
+.overlay-image {
+  /* position: fixed;
+  top: 0; */
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: max-content;
+  padding-bottom: 10vh;
+}
+.page-body {
+  position: relative;
+  top: 10vh;
+  width: 100%;
+  padding-top: 20px;
+  height: max-content;
+  /* overflow: scroll; */
+}
+.carousel {
+  width: 50%;
+  aspect-ratio: 2;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel-item img {
+  object-fit: contain;
+  width: 100%;
+  overflow: hidden;
+  height: auto !important;
+  /* height: auto; */
+}
+.carousel-inner {
+  border-radius: 2vw;
+  width: 100%;
+  height: 100%;
+}
+.carousel button {
+  transition: all 0.3s ease-in-out;
+}
+.carousel > button:hover {
+  background-color: transparent;
+  /* backdrop-filter: blur(5px); */
+}
+.active {
+  height: 100%;
+}
+@media (max-width: 1150px) {
+  .carousel {
+    width: 60%;
   }
+}
+@media (max-width: 825px) {
+  .carousel {
+    width: 80%;
+  }
+  .event-table {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .event-card {
+    width: 100%;
+  }
+  body {
+    width: 100vw;
+  }
+}
+header {
+  position: static !important;
+  height: 10vh;
+  backdrop-filter: blur(10px);
+}
+@media (min-width: 280px) and (max-width: 700px) {
+  /* body {
+    height: 100vh;
+  } */
   .event-card {
     height: 80vw;
   }
 }
-.cepheid-logo {
-  display: inline;
-  height: 10vh;
-  object-fit: contain;
-  transform: translateX(-50%);
-  position: fixed;
-  top: 0;
-  left: 20vw;
-  z-index: 100;
-  /* transform: translate(-160px, 100px); */
-}
-@media (max-width: 514px) {
+@media (min-width: 515px) {
   .cepheid-logo {
+    width: 50px;
+    scale: 1.8;
     display: inline;
     height: 10vh;
     object-fit: contain;
-    transform: translateX(23%);
-    position: fixed;
+    position: absolute;
     top: 0;
-    right: 0;
+    left: 10vw;
+    z-index: 100;
+    /* transform: translate(-160px, 100px); */
+  }
+}
+@media (max-width: 514px) {
+  .cepheid-logo {
+
+    position: absolute;
+    top: 0;
+    left: 75% !important;
+    width: 50px;
+    scale: 1.5;
+    display: inline;
+    height: 10vh;
+    object-fit: contain;
+    transform: translateX(0px);
     z-index: 100;
   }
 }
-

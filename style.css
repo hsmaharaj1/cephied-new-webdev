@@ -86,7 +86,7 @@ li a{
 
 @media only screen and (max-width: 515px) {
   .footer{
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 515px) {
