@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEPHEID</title>
+    <link rel="stylesheet" type="text/css" href="members.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="menu">
+        <div>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+      <h2>MEMBERS</h2>
+    </div>
+    <div class="navbar">
+      <ul id="nav-menu">
+        <li class="nav-it"><a href="index.html">HOME</a></li>
+        <li class="nav-it"><a href="blogs.html">BLOGS</a></li>
+        <li class="nav-it"><a href="events.html">EVENTS</a></li>
+        <li class="nav-it"><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+    <div class="footer">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="blogs.html">BLOGS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+    <script src="cleanarr.js"></script>
+  <script>
+    // console.log("yes\n");
+    // console.log(members);
+
+    const flexContainer = document.createElement("div");
+    flexContainer.classList.add("flex-container");
+
+    members.forEach((member) => {
+      const userCard = document.createElement("div");
+      userCard.classList.add("user-card");
+
+      const userPhoto = document.createElement("div");
+      userPhoto.classList.add("user-photo");
+      const photo = document.createElement("img");
+      photo.src = member.Photo;
+      photo.alt = "User Photo";
+      userPhoto.appendChild(photo);
+      userCard.appendChild(userPhoto);
+
+      const userDetails = document.createElement("div");
+      userDetails.classList.add("user-details");
+      const name = document.createElement("h3");
+      name.textContent = `Name: ${member.Name}`;
+      const email = document.createElement("p");
+      email.textContent = `Email: ${member.Email}`;
+      const designation = document.createElement("p");
+      designation.textContent = `Designation: ${member.Designation}`;
+      userDetails.appendChild(name);
+      userDetails.appendChild(email);
+      userDetails.appendChild(designation);
+      userCard.appendChild(userDetails);
+
+      flexContainer.appendChild(userCard);
+    });
+
+    document.body.appendChild(flexContainer);
+  </script>
+    <img src="./logo.png" alt="cepheid logo" class="cepheid-logo" />
+  </body>
+</html>
