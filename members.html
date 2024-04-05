@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEPHEID</title>
+    <script
+      src="https://kit.fontawesome.com/e402329cbc.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="members.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  
+  <body>
+    <!-- <div class="header"> -->
+    <div class="header">
+      <h1>MEMBERS</h1>
+      <div class="menu">
+        <div>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <ul id="nav-menu">
+        <li class="nav-it"><a href="index.html">HOME</a></li>
+        <li class="nav-it"><a href="blogs.html">BLOGS</a></li>
+        <li class="nav-it"><a href="events.html">EVENTS</a></li>
+        <li class="nav-it"><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+    <div class="footer">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="blogs.html">BLOGS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+    <script src="cleanarr.js"></script>
+    <script>
+      const flexContainer = document.createElement("div");
+      flexContainer.classList.add("flex-container");
+
+      const headings = ["Heads", "Mentors", "Senior Cores", "Cores"]; // Array of headings
+
+      for (let i = 0; i < members.length; i++) {
+        const subarray = members[i];
+        const heading = document.createElement("h2");
+        heading.textContent = headings[i];
+        flexContainer.appendChild(heading);
+
+        let del = 0;
+        subarray.forEach((member) => {
+          const userCard = document.createElement("div");
+          userCard.classList.add("user-card");
+          userCard.setAttribute("data-aos", "fade-right");
+          userCard.setAttribute("data-aos-delay", del);
+          userCard.setAttribute("data-aos-duration", "300");
+          if (window.innerWidth > 1550) del = (del + 100) % 400;
+          else if (window.innerWidth > 1160) del = (del + 100) % 300;
+          else if (window.innerWidth > 770) del = (del + 100) % 200;
+          const userPhoto = document.createElement("div");
+          userPhoto.classList.add("user-photo");
+          const photo = document.createElement("img");
+          // photo.src = "./sample-img.jpg";
+          photo.src = `${member.Photo}`;
+          photo.alt = "User Photo";
+          userPhoto.appendChild(photo);
+          userCard.appendChild(userPhoto);
+
+          const userDetails = document.createElement("div");
+          userDetails.classList.add("user-details");
+          const name = document.createElement("h3");
+          name.textContent = `${member.Name}`;
+
+          const emailContainer = document.createElement("span");
+          emailContainer.style.display = "inline-flex"; // Maintain inline display
+
+          const emailIcon = document.createElement("i");
+          emailIcon.classList.add("fa-regular", "fa-envelope");
+          emailContainer.appendChild(emailIcon);
+
+          const emailText = document.createElement("a");
+          emailText.href = `mailto:${member.Email}`;
+          emailText.textContent = ` ${member.Email}`;
+          emailContainer.appendChild(emailText);
+
+          const designation = document.createElement("p");
+          designation.textContent = `Designation: ${member.Designation}`;
+          userDetails.appendChild(name);
+          userDetails.appendChild(emailContainer);
+          userDetails.appendChild(designation);
+          userCard.appendChild(userDetails);
+
+          flexContainer.appendChild(userCard); // Closing parenthesis added here
+        });
+      }
+
+      document.body.appendChild(flexContainer);
+    </script>
+    <img src="./logo.png" alt="cepheid logo" class="cepheid-logo" />
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        var key = 1;
+        const menuIcon = document.querySelector("toggle");
+        const navBar = document.querySelector(".navbar");
+        const cont = document.querySelector(".cont");
+        const canvas = document.querySelector("canvas_container");
+        const text = document.querySelector(".overtext");
+
+        toggle.addEventListener("change", () => {
+          if (key == 1) {
+            document.querySelector(".flex-container").style.display =
+              document.querySelector(".flex-container").style.display == "none"
+                ? "flex"
+                : "none";
+            navBar.classList.toggle("open");
+            navBar.classList.remove("close");
+            text.classList.add("close");
+            // cont.classList.add('close');
+            key = 0;
+          } else {
+            navBar.classList.add("close");
+            navBar.classList.remove("open");
+            text.classList.remove("close");
+            // cont.classList.remove('close');
+            key = 1;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
